@@ -7,6 +7,7 @@ import SortingTable from "./components/SortingTable";
 import GlobalFiltering from "./components/GlobalFiltering";
 import ColumnFiltering from "./components/ColumnFiltering";
 import PaginationTable from "./components/PaginationTable";
+import SelectingRow from "./components/SelectingRow";
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
       {/* <SortingTable /> */}
       {/* <GlobalFiltering /> */}
       {/* <ColumnFiltering /> */}
-      <PaginationTable />
+      {/* <PaginationTable /> */}
+      <SelectingRow />
     </div>
   );
 }
