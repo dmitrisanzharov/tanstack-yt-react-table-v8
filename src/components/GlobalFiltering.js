@@ -4,6 +4,7 @@ import {
   useReactTable,
   flexRender,
   getCoreRowModel,
+  getFilteredRowModel,
 } from "@tanstack/react-table";
 import { columnDef } from "./columns";
 import dataJSON from "./data.json";
@@ -12,16 +13,29 @@ const BasicTable = () => {
   const finalData = React.useMemo(() => dataJSON, []);
   const finalColumnDef = React.useMemo(() => columnDef, []);
 
+  const [filtering, setFiltering] = React.useState("");
+
   const tableInstance = useReactTable({
     columns: finalColumnDef,
     data: finalData,
     getCoreRowModel: getCoreRowModel(),
+    getFilteredRowModel: getFilteredRowModel(),
+    state: {
+      globalFilter: filtering,
+    },
+    onGlobalFilterChanged: setFiltering,
   });
 
   //   console.log("test", tableInstance.getHeaderGroups());
 
   return (
     <>
+      <input
+        type="text"
+        value={filtering}
+        onChange={(e) => setFiltering(e.target.value)}
+      />
+      <hr />
       <table>
         <thead>
           {tableInstance.getHeaderGroups().map((headerEl) => {
