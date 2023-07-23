@@ -10,6 +10,7 @@ import PaginationTable from "./components/PaginationTable";
 import SelectingRow from "./components/SelectingRow";
 import ColumnOrdering from "./components/ColumnOrdering";
 import ColumnHiding from "./components/ColumnHiding";
+import MuiTable from './components/MuiTable';
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
       {/* <PaginationTable /> */}
       {/* <SelectingRow /> */}
       {/* <ColumnOrdering /> */}
-      <ColumnHiding />
+      {/* <ColumnHiding /> */}
+      <MuiTable />
     </div>
   );
 }
