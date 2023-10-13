@@ -35,6 +35,10 @@ const BasicTable = () => {
 
   //   console.log("test", tableInstance.getHeaderGroups());
 
+  React.useEffect(() => {
+    console.log(tableInstance.getState().columnFilters);
+  });
+
   return (
     <>
       <table>

@@ -2,6 +2,49 @@ import { createColumnHelper } from "@tanstack/react-table";
 import moment from "moment";
 import IndeterminateCheckbox from "./IndeterminateCheckbox";
 
+
+function myFn(row, columnId, filterValue){
+
+  // console.log('row', row);
+
+  // if(row.id === '1'){
+  //   console.log('row', row);
+  //   console.log('columnId', columnId);
+  //   console.log('value', filterValue);
+
+  //   return true
+  // } 
+
+  // return false;
+
+
+  // console.log('row', row);
+  // console.log('columnId', columnId);
+  // console.log('value', filterValue);
+  // console.log('++++++++++++++++++++++++++++');
+
+}
+
+myFn.autoRemove = (val) => console.log('yayay', val);
+
+
+function myFn2(row){
+  // console.log('row2', row)
+  if(row.first_name === 'Tommy' || row.first_name === 'Delila'){
+    row.first_name = 'Mah Man';
+    return row.first_name;
+    // return (<span style={{color: 'green'}}>{row.first_name}</span>);
+  }
+  return row.first_name;
+}
+
+
+function myFn3(cell){
+  console.log(cell);
+  return (<span style={{color: 'red'}}>{cell.getValue()}</span>)
+}
+
+
 const columnHelper = createColumnHelper();
 
 export const columnDef = [
@@ -9,21 +52,23 @@ export const columnDef = [
     header: "Id",
   }),
   {
-    accessorFn: (row) => `${row.first_name}`,
+    accessorFn: myFn2,
     header: "First Name",
   },
   {
     accessorKey: "last_name",
     header: "Last Name",
+    filterFn: myFn
   },
   {
     accessorKey: "email",
     header: "Email",
+    filterFn: myFn
   },
   {
     accessorKey: "date",
     header: "Date",
-    cell: ({ getValue }) => moment(new Date(getValue())).format("MMM Do YY"),
+    cell: myFn3,
   },
 ];
 
@@ -133,3 +178,4 @@ export const columnDefWithCheckBox = [
     cell: ({ getValue }) => moment(new Date(getValue())).format("MMM Do YY"),
   },
 ];
+
