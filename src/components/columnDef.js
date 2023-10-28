@@ -72,4 +72,31 @@ const columnDef = [
     },
 ];
 
+export const columnDefDefaultFn = [
+    {
+        accessorKey: 'id',
+        header: 'ID',
+    },
+    {
+        accessorKey: 'first_name',
+        header: 'First Name',
+        filterFn: 'arrIncludesSome'
+    },
+    {
+        accessorKey: 'last_name',
+        header: 'Last Name',
+        cell: lastNameCellFn
+    },
+    {
+        accessorKey: 'email',
+        header: 'Email',
+        filterFn: firstNameFilterFn
+    },
+    {
+        accessorKey: 'date',
+        header: 'Date',
+        enableColumnFilter: false,
+    },
+];
+
 export default columnDef;
