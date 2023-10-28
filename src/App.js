@@ -13,6 +13,7 @@ import ColumnHiding from "./components/ColumnHiding";
 import MuiTable from './components/MuiTable';
 import ColumnFilteringFilterFunction from './components/ColumnFilteringFilterFunction'; 
 import YouTubeTableTutorial from './components/YouTubeTableTutorial';
+import YouTubeDefaultFilterFn from './components/YouTubeDefaultFilterFn';
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
       {/* <SortingTable /> */}
       {/* <GlobalFiltering /> */}
       {/* <ColumnFiltering /> */}
-      <YouTubeTableTutorial />
+      {/* <YouTubeTableTutorial /> */}
+      <YouTubeDefaultFilterFn />
       {/* <ColumnFilteringFilterFunction /> */}
       {/* <PaginationTable /> */}
       {/* <SelectingRow /> */}
