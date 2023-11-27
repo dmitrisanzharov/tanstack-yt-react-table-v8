@@ -13,9 +13,10 @@ import "./App.css";
 // import MuiTable from './components/MuiTable';
 // import ColumnFilteringFilterFunction from './components/ColumnFilteringFilterFunction'; 
 // import YouTubeTableTutorial from './components/YouTubeTableTutorial';
-import YouTubeDefaultFilterFn from './components/YouTubeDefaultFilterFn';
+// import YouTubeDefaultFilterFn from './components/YouTubeDefaultFilterFn';
 // import Blah2 from './components/Blah2';
 // import MessingAround from './components/MessingAround';
+import BasicOneButtonFilter from './components/BasicOneButtonFilter';
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
       {/* <GlobalFiltering /> */}
       {/* <ColumnFiltering /> */}
       {/* <YouTubeTableTutorial /> */}
-      <YouTubeDefaultFilterFn />
+      {/* <YouTubeDefaultFilterFn /> */}
       {/* <ColumnFilteringFilterFunction /> */}
       {/* <PaginationTable /> */}
       {/* <SelectingRow /> */}
@@ -34,6 +35,7 @@ function App() {
       {/* <MuiTable /> */}
       {/* <MessingAround /> */}
       {/* <Blah2 /> */}
+      <BasicOneButtonFilter />
     </div>
   );
 }

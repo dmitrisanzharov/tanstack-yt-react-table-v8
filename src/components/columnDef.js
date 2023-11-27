@@ -35,7 +35,7 @@ firstNameFilterFn.autoRemove = (val) => !val;
 
 
 function firstNameAccessorFn(row){
-    console.log('row', row);
+    // console.log('row', row);
 
     // if(row.first_name === 'Tommy' || row.first_name === 'Delila'){
     //     row.first_name = 'ha_anyValue';
