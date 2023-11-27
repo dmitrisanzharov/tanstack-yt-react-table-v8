@@ -40,8 +40,8 @@ function myFn2(row){
 
 
 function myFn3(cell){
-  console.log(cell);
-  return (<span style={{color: 'red'}}>{cell.getValue()}</span>)
+  // console.log(cell);
+  return (<span style={{color: 'red'}}>{cell.getValue() + ` ${Math.random()}`}</span>)
 }
 
 

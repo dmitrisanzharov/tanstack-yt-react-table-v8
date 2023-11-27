@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "first_name": "Tommy",
+    "first_name": null,
     "last_name": "Griffe",
     "email": "tgriffe0@timesonline.co.uk",
     "gender": "Female",
@@ -41,7 +41,7 @@
   },
   {
     "id": 5,
-    "first_name": "Kristi",
+    "first_name": "",
     "last_name": "Thow",
     "email": "kthow4@aboutads.info",
     "gender": "Female",
