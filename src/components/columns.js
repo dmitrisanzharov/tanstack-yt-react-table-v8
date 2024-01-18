@@ -89,7 +89,7 @@ export const columnDefWithGrouping = [
     columns: [
       {
         accessorFn: (row) => `${row.first_name}`,
-        header: "First Name",
+        header: "First Name, Omg Its A Really Long Header Jaizuz",
       },
       {
         accessorKey: "last_name",
@@ -116,7 +116,7 @@ export const columnDefWithFilter = [
   }),
   {
     accessorFn: (row) => `${row.first_name}`,
-    header: "First Name",
+    header: "First Name, Omg Its A Really Long Header Jaizuz",
   },
   {
     accessorKey: "last_name",

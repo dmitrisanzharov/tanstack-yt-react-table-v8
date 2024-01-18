@@ -16,11 +16,12 @@ import "./App.css";
 // import YouTubeDefaultFilterFn from './components/YouTubeDefaultFilterFn';
 // import Blah2 from './components/Blah2';
 // import MessingAround from './components/MessingAround';
-import GetFacetedValuesTable from './components/GetFacetedValuesTable';
+// import GetFacetedValuesTable from './components/GetFacetedValuesTable';
+import BasicTableForRowCard from './components/BasicTableForRowCard'
 
 function App() {
   return (
-    <div>
+    <div style={{padding: '20px'}}>
       {/* <BasicTable /> */}
       {/* <SortingTable /> */}
       {/* <GlobalFiltering /> */}
@@ -35,7 +36,8 @@ function App() {
       {/* <MuiTable /> */}
       {/* <MessingAround /> */}
       {/* <Blah2 /> */}
-      <GetFacetedValuesTable />
+      {/* <GetFacetedValuesTable /> */}
+      <BasicTableForRowCard />
     </div>
   );
 }
