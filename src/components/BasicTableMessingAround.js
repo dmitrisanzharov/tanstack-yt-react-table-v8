@@ -4,11 +4,21 @@ import {
   useReactTable,
   flexRender,
   getCoreRowModel,
+  getFilteredRowModel,
 } from "@tanstack/react-table";
 import { columnDef } from "./columns";
 import dataJSON from "./data.json";
 
-const BasicTable = () => {
+
+const BasicTableMessingAround = () => {
+
+    const initialColumnVisibility = {
+        id: true
+    }
+
+    const [vis, setVis] = React.useState(initialColumnVisibility)
+
+
   const finalData = React.useMemo(() => dataJSON, []);
   const finalColumnDef = React.useMemo(() => columnDef, []);
 
@@ -16,13 +26,21 @@ const BasicTable = () => {
     columns: finalColumnDef,
     data: finalData,
     getCoreRowModel: getCoreRowModel(),
+    getFilteredRowModel:   getFilteredRowModel(),
+    state: {
+        columnVisibility: vis
+    },
+    onColumnVisibilityChange: setVis,
   });
 
     // console.log("headers", tableInstance.getHeaderGroups());
     // console.log("rows");
 
+
+
   return (
     <>
+        <button onClick={()=> setVis({...vis, id: false})}>change</button>
       <table>
         <thead>
           {tableInstance.getHeaderGroups().map((headerEl) => {
@@ -53,7 +71,7 @@ const BasicTable = () => {
         <tbody>
           {tableInstance.getRowModel().rows.map((rowEl) => {
 
-            // console.log('row', rowEl);
+            console.log('row', rowEl);
 
 
             return (
@@ -81,4 +99,4 @@ const BasicTable = () => {
   );
 };
 
-export default BasicTable;
+export default BasicTableMessingAround;

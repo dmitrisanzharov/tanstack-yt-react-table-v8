@@ -5,7 +5,13 @@ import IndeterminateCheckbox from "./IndeterminateCheckbox";
 
 function myFn(row, columnId, filterValue){
 
-  // console.log('row', row);
+  console.log('row', row);
+  console.log('value', row.getValue(columnId));
+  console.log('columnId', columnId);
+  console.log('filterValue', filterValue);
+  console.log('============================');
+
+  
 
   // if(row.id === '1'){
   //   console.log('row', row);
@@ -15,7 +21,7 @@ function myFn(row, columnId, filterValue){
   //   return true
   // } 
 
-  // return false;
+  return false;
 
 
   // console.log('row', row);
@@ -29,7 +35,7 @@ myFn.autoRemove = (val) => console.log('yayay', val);
 
 
 function myFn2(row){
-  // console.log('row2', row)
+  console.log('row2', row)
   if(row.first_name === 'Tommy' || row.first_name === 'Delila'){
     row.first_name = 'Mah Man';
     return row.first_name;
@@ -48,28 +54,20 @@ function myFn3(cell){
 const columnHelper = createColumnHelper();
 
 export const columnDef = [
-  columnHelper.accessor("id", {
+  columnHelper.accessor(row => `${row.id}, ${row.gender}`, {
+    id: 'id',
     header: "Id",
+    enableHidding: true,
+    cell: (info) => <div>hello</div>
   }),
-  {
-    accessorFn: myFn2,
+  columnHelper.accessor((row) => row.first_name, { 
+    id: 'first_name',
     header: "First Name",
-  },
+  }),
   {
     accessorKey: "last_name",
     header: "Last Name",
-    filterFn: myFn
-  },
-  {
-    accessorKey: "email",
-    header: "Email",
-    filterFn: myFn
-  },
-  {
-    accessorKey: "date",
-    header: "Date",
-    cell: myFn3,
-  },
+  }
 ];
 
 // cell merge example
